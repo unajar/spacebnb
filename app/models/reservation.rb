@@ -2,7 +2,7 @@ class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :planet
 
-  validates :user_id, :planet_id, :start_date, :end_date, presence: true
+  validates :start_date, :end_date, presence: true
   validates :user_id, uniqueness: { scope: :planet_id }
   validate :start_date_cannot_be_in_the_past
   validate :end_date_cannot_be_before_start_date
