@@ -1,7 +1,14 @@
 .banner {
   background-size: cover;
   background-position: center;
+  height: 600px;
   padding: 150px 0;
+  display: flex;
+}
+
+.inside {
+  display: block;
+  margin-top: 240px;
 }
 
 .banner h1 {
@@ -21,7 +28,7 @@
 
 .btn-ghost {
   color: white;
-  border: 1px solid white;
+  border: 2px solid white;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
