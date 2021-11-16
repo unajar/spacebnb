@@ -7,10 +7,3 @@ Rails.application.routes.draw do
     resources :reservations, except: %i[show destroy]
   end
 end
-
-# get "planets", to: "planets#index"
-# get "planets/:id", to: "planets#show"
-# get "planets/new", to: "planets#new"
-# get "/planets/:id/edit", to: "planets#edit"
-# patch "/planets/:id", to: "planets#update"
-# delete "/planets/:id", to: "planet#destroy"
