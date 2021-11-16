@@ -7,6 +7,13 @@ width: 80px;
 }
 
 .card img {
+  // height: 170px;
+  // width: auto;
   height: 170px;
-  width: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+img {
+  border-radius: 10px;
 }
