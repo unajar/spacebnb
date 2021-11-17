@@ -12,10 +12,12 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
-    @reservation.planet = Planet.find(params[:planet_id])
+    @planet = Planet.find(params[:planet_id])
+    @reservation.planet = @planet
     @reservation.confirmed = false
+    # raise
     if @reservation.save
-      redirect_to planets_path(@planet)
+      redirect_to planet_path(@planet)
     else
       render :new
     end
