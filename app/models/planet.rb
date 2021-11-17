@@ -1,6 +1,7 @@
 class Planet < ApplicationRecord
   belongs_to :user
   has_many :reservations, dependent: :destroy
+  monetize :price_cents
 
   validates :address, :description, :name, :price, presence: true
   validates :address, :name, uniqueness: true
