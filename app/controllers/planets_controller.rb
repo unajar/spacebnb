@@ -12,6 +12,12 @@ class PlanetsController < ApplicationController
   end
 
   def create
+    @lplanet = Planet.new(list_params)
+    if @planet.save
+      redirect_to planets_path(@lplanet)
+    else
+      render :new
+    end
   end
 
   def edit
