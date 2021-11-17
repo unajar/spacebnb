@@ -1,7 +1,4 @@
 <h1>Planets:</h1>
-
-<%= link_to "Create a planet", new_planet_path %>
-
 <ul>
   <% @planets.each do |planet| %>
     <li><%= link_to planet.name, planet_path(planet) %></li>
