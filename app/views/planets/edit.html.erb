@@ -1,8 +1,9 @@
 <h1>Edit planet</h1>
 
-<%= render 'form', planet: @planet %>
-
-<hr>
-<%= link_to planet_path do %>
-  <i class="fa fa-history"></i> Back to list
-<% end %>
+<%= simple_form_for @planet do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.submit class: 'btn btn-primary' %>
+  <% end %>

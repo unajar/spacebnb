@@ -5,3 +5,5 @@
 <p>Description: <%= @planet.description %></p>
 <p>Address: <%= @planet.address %></p>
 <p>Price: <%= @planet.price %></p>
+
+<p><%= link_to "Delete this planet", planets_path(@planet), method: :delete %></p>
