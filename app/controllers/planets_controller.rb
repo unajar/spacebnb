@@ -12,7 +12,7 @@ class PlanetsController < ApplicationController
   end
 
   def create
-    @planet = Planet.new(planets_params)
+    @planet = Planet.new(planet_params)
     if @planet.save
       redirect_to planets_path(@planet)
     else
@@ -27,5 +27,11 @@ class PlanetsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def planet_params
+    params.require(:planet).permit(:name, :address, :description, :price)
   end
 end
