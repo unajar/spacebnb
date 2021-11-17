@@ -34,7 +34,11 @@ class PlanetsController < ApplicationController
   def destroy
     planet = Planet.find(params[:id])
     planet.destroy
-    redirect_to planets_path
+    redirect_to my_planets_path
+  end
+
+  def my_planets
+    @planets = current_user.planets
   end
 
   private
