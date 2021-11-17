@@ -4,4 +4,4 @@
 
 <p>Description: <%= @planet.description %></p>
 <p>Address: <%= @planet.address %></p>
-<p>Price: <%= @planet.price %></p>
+<p>Price: <%= humanized_money_with_symbol(@planet.price) %></p>
