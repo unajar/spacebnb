@@ -6,4 +6,6 @@
 <p>Address: <%= @planet.address %></p>
 <p>Price: <%= @planet.price %></p>
 
-<p><%= link_to "Delete this planet", planets_path(@planet), method: :delete %></p>
+<p><%= link_to "Delete this planet", planet_path(@planet), method: :delete, data: { confirm: 'Are you sure you want to delete this planet?' } %></p>
+
+<p><%= link_to "Edit this planet", edit_planet_path(@planet) %></p>
