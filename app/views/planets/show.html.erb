@@ -4,8 +4,4 @@
 
 <p>Description: <%= @planet.description %></p>
 <p>Address: <%= @planet.address %></p>
-<p>Price: <%= humanized_money_with_symbol(@planet.price ) %></p>
-
-<p><%= link_to "Delete this planet", planet_path(@planet), method: :delete, data: { confirm: 'Are you sure you want to delete this planet?' } %></p>
-
-<p><%= link_to "Edit this planet", edit_planet_path(@planet) %></p>
+<p>Price: <%= humanized_money_with_symbol(@planet.price) %></p>
