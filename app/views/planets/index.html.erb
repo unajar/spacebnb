@@ -1,21 +1,22 @@
 <h1>Planets:</h1>
 <%= link_to "Create a planet", new_planet_path %>
 
-<ul>
-  <% @planets.each do |planet| %>
-    <li><%= link_to planet.name, planet_path(planet) %></li>
-  <% end %>
-</ul>
+<%# <ul> %>
+  <%# <% @planets.each do |planet| %> %>
+    <%# <li><%= link_to planet.name, planet_path(planet) %></li> %>
+  <%# <% end %> %>
+<%# </ul> %>
 
 
 
 <% @planets.each do |planet| %>
+<%= link_to planet, planet_path(planet) %>
   <div class="card-product">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="card-product-infos">
       <h2><%= planet.name %></h2>
       <p><%= planet.description %></p>
-      <h3><%= planet.price %></h3>
+      <h2><%= planet.price %></h2>
     </div>
   </div>
 <% end %>
