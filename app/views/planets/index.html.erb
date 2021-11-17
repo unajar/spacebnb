@@ -6,3 +6,16 @@
     <li><%= link_to planet.name, planet_path(planet) %></li>
   <% end %>
 </ul>
+
+
+
+<% @planets.each do |planet| %>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= planet.name %></h2>
+      <p><%= planet.description %></p>
+      <h3><%= planet.price %></h3>
+    </div>
+  </div>
+<% end %>
