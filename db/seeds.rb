@@ -1,7 +1,20 @@
+require "faker"
+
 Planet.destroy_all
 User.destroy_all
 
 User.create!(user_name:"Ben", password: "123456", email: "a@a.a")
+
+20.times do
+  restaurant = Restaurant.new(
+    name:    Faker::Space.planet,
+    address: Faker::Space.galaxy,
+    description: Faker::Books::Dune.saying,
+    price:  rand(240000..999999999)
+    user:
+  )
+  restaurant.save!
+end
 
 Planet.create!(address: "238251474028 Roswell crater", description: "A nice 122000 rooms in the middle of the crater with a lovely view on the erupting volcano", name: "Venus", price: 100, user: User.first)
 Planet.create!(address: "173671728748 Allien montain", description: "a land of 3 billion square km to play real star wars in the garden", name: "Neptun", price: 100, user: User.first)
