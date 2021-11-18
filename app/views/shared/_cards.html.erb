@@ -1,0 +1,15 @@
+
+<%# cards for the index page %>
+
+<% @planets.each do |planet| %>
+  <%= link_to planet_path(planet) do %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2><%= planet.name %></h2>
+        <p><%= planet.description %></p>
+        <h2 class="price"><%= humanized_money_with_symbol(planet.price) %></h2>
+      </div>
+    </div>
+  <% end %>
+<% end %>
