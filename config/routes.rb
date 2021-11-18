@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get "/my_reservations", to: "reservations#my_reservations"
   get "/my_planets_reservations", to: 'reservations#my_planets_reservations', as: 'my_planets_reservations'
+  patch '/my_planets_reservation/:id/confirm', to: 'reservations#confirm_reservation', as: 'confirm_reservation'
+  patch '/my_planets_reservations/:id/decline', to: 'reservations#decline_reservation', as: 'decline_reservation'
 
   resources :planets do
     resources :reservations, except: %i[show destroy]

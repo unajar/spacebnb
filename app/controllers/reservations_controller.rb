@@ -22,10 +22,25 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def confirm_reservation
+    reservation = Reservation.find(params[:id])
+    reservation.status = 'confirmed'
+    reservation.save
+    redirect_to my_planets_reservations_path
+  end
+
+  def decline_reservation
+    reservation = Reservation.find(params[:id])
+    reservation.status = 'declined'
+    reservation.save
+    redirect_to my_planets_reservations_path
+  end
+
   def my_planets_reservations
     planets = current_user.planets
     @pending = retrieve_reservations('pending', planets)
     @confirmed = retrieve_reservations('confirmed', planets)
+    @declined = retrieve_reservations('declined', planets)
   end
 
   private
