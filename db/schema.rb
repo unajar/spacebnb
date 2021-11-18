@@ -52,9 +52,9 @@ ActiveRecord::Schema.define(version: 2021_11_18_172141) do
     t.bigint "planet_id", null: false
     t.date "start_date"
     t.date "end_date"
-    t.boolean "confirmed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
     t.index ["planet_id"], name: "index_reservations_on_planet_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end

@@ -12,6 +12,10 @@
 @import "components/index";
 @import "pages/index";
 
+a:link {
+  text-decoration: none;
+}
+
 .layout-container {
   width: 100vw;
   position: relative;

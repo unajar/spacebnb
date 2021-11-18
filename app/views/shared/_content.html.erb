@@ -1,33 +1,16 @@
-
-<div class = "container">
+<div class="container">
   <div class="card-deck">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1548&q=80" />
-      <div class="card-body">
-        <h5 class="card-title">Saturn</h5>
-          <p class="card-text">1.2 billion kilometers away.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://media.istockphoto.com/photos/planet-venus-picture-id1199281415?b=1&k=20&m=1199281415&s=170667a&w=0&h=d5fMUKJ5SEuVfzZx7wS9yZ4rrZUOdLZXGSKFl9GQENI=" />
-      <div class="card-body">
-        <h5 class="card-title">Venus</h5>
-        <p class="card-text">61 million kilometers away.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://media.istockphoto.com/photos/jupiter-on-star-field-picture-id173228030?b=1&k=20&m=173228030&s=170667a&w=0&h=vBhiZw7Bj3R9GHcJbPII1WeBvAemGOUcI1AyD1I82jw=" />
-      <div class="card-body">
-        <h5 class="card-title">Jupiter</h5>
-        <p class="card-text">588 million kilometers away.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://media.istockphoto.com/photos/dwarf-planet-pluto-lit-by-the-stars-of-the-galaxy-3d-rendering-picture-id1050329862?b=1&k=20&m=1050329862&s=170667a&w=0&h=pIBNrkl7JCBkIdhBS5ik7I5DJHbiswiAmqwk1vA4_bI=" />
-      <div class="card-body">
-        <h5 class="card-title">Pluto</h5>
-        <p class="card-text">4.28 billion kilometers away.</p>
-      </div>
-    </div>
+    <% @planets.each do |planet| %>
+      <%= link_to planet_path(planet) do %>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1548&q=80" />
+          <div class="card-body">
+            <h5 class="card-title"><%= planet.name %></h5>
+              <p class="card-text"><%= planet.description %></p>
+              <%# <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
