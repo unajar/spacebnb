@@ -11,3 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.layout-container {
+  width: 100vw;
+  position: relative;
+  min-height: calc(100vh - 140px);
+}
