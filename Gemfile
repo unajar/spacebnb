@@ -66,3 +66,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Monitize
 gem 'money-rails', '~>1.12'
+
+# Cloudinary
+gem 'cloudinary', '~> 1.16.0'
