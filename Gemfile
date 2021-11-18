@@ -69,3 +69,6 @@ gem 'money-rails', '~>1.12'
 
 # Cloudinary
 gem 'cloudinary', '~> 1.16.0'
+
+# Gemfaker
+gem 'faker'
