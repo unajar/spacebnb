@@ -1,8 +1,11 @@
-<p><%= link_to "Back", planets_path %></p>
-
-<h1><%= @planet.name %></h1>
-
-<p>Description: <%= @planet.description %></p>
-<p>Address: <%= @planet.address %></p>
-<p>Price: <%= humanized_money_with_symbol(@planet.price) %></p>
-<p><%= link_to "Book this planet", new_planet_reservation_path(@planet) %></p>
+<div class="media">
+  <%# <img class="mr-3" src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1548&q=80" alt="Generic placeholder image"> %>
+  <div class="media-body">
+    <h5 class="mt-0"><%= @planet.name %></h5>
+    <p><%= @planet.description %></p>
+    <p><%= @planet.address %></p>
+    <p><%= humanized_money_with_symbol(@planet.price) %></p>
+    <p><%= link_to "Back", planets_path %></p>
+    <p><%= link_to "Book this planet", new_planet_reservation_path(@planet) %></p>
+  </div>
+</div>
