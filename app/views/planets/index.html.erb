@@ -1,6 +1,6 @@
-<h1>Planets:</h1>
-<ul>
-  <% @planets.each do |planet| %>
-    <li><%= link_to planet.name, planet_path(planet) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="text-align">
+    <h1>Planets to rent:</h1>
+  </div>
+  <%= render "shared/cards" %>
+</div>
