@@ -22,7 +22,23 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def my_planets_reservations
+    planets = current_user.planets
+    @pending = retrieve_reservations('pending', planets)
+    @confirmed = retrieve_reservations('confirmed', planets)
+  end
+
   private
+
+  def retrieve_reservations(status, planets)
+    reservations = []
+    planets.each do |planet|
+      unless planet.reservations.empty?
+        reservations += planet.reservations.select { |reservation| reservation.status == status }
+      end
+    end
+    return reservations
+  end
 
   def reservation_params
     params.require(:reservation).permit(:start_date, :end_date)

@@ -8,7 +8,7 @@ class Reservation < ApplicationRecord
   validates :user_id, uniqueness: { scope: :planet_id }
   validate :start_date_cannot_be_in_the_past
   validate :end_date_cannot_be_before_start_date
-  validates :status, inclusion: { in: %w[declined pending confirmed], message: "%{value} is not a valid status" }
+  validates :status, inclusion: { in: %w[declined pending confirmed], message: "value is not a valid status" }
 
   private
 
