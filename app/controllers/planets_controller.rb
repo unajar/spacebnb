@@ -29,7 +29,7 @@ class PlanetsController < ApplicationController
 
   def update
     @planet = Planet.find(params[:id])
-    if @planet.save(planet_params)
+    if @planet.update(planet_params)
       redirect_to my_planet_path(@planet)
     else
       render :edit
