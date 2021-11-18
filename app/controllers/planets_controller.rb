@@ -28,9 +28,12 @@ class PlanetsController < ApplicationController
   end
 
   def update
-    planet = Planet.find(params[:id])
-    planet.update(planet_params)
-    redirect_to my_planet_path(planet)
+    @planet = Planet.find(params[:id])
+    if @planet.update(planet_params)
+      redirect_to my_planet_path(@planet)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -50,6 +53,6 @@ class PlanetsController < ApplicationController
   private
 
   def planet_params
-    params.require(:planet).permit(:name, :description, :address, :price, :user)
+    params.require(:planet).permit(:name, :description, :address, :price, :photo)
   end
 end
