@@ -50,6 +50,5 @@ planets[9].photo.attach(io: file9, filename: 'planet9.jpg', content_type: 'image
 # Planet.create!(address: "The moon", description: "Come to see the flag raised in 1969", name: "Moon", price: 100, user: User.first)
 
 
-
-# Planet.create!(address: "1848 xandar road", description: "A cozy planet with a very constant weather. Temperature around -200°C", name: "Xandar", price: 100, user: User.second)
-# Planet.create!(address: "4066 hala road", description: "Hala is the homeworld of the Kree and the capital planet of the Kree Empire.", name: "Hala", price: 100, user: User.second)
+Reservation.create!(user: User.second, planet: Planet.first, start_date: "2021-11-18", end_date: "2021-11-20", status: "pending")
+Reservation.create!(user: User.second, planet: Planet.second, start_date: "2021-11-18", end_date: "2021-11-20", status: "pending")

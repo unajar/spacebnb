@@ -1,0 +1,26 @@
+<h1>My planet's reservations</h1>
+<h2>New:</h2>
+<ul>
+  <% @pending.each do |reservation| %>
+    <li>
+      <%= reservation.planet.name %>
+      <%= reservation.user.user_name %>
+      <%= reservation.start_date %>
+      <%= reservation.end_date %>
+      <%= reservation.status %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Confirmed:</h2>
+<ul>
+  <% @confirmed.each do |reservation| %>
+    <li>
+      <%= reservation.planet.name %>
+      <%= reservation.user.user_name %>
+      <%= reservation.start_date %>
+      <%= reservation.end_date %>
+      <%= reservation.status %>
+    </li>
+  <% end %>
+</ul>
