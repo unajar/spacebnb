@@ -1,9 +1,5 @@
 class ReservationsController < ApplicationController
 
-  def index
-    @reservations = Reservation.all
-  end
-
   def new
     @reservation = Reservation.new
     @planet = Planet.find(params[:planet_id])
@@ -22,6 +18,16 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def my_reservations
+  end
+
+  def my_planets_reservations
+    planets = current_user.planets
+    @pending = retrieve_reservations('pending', planets)
+    @confirmed = retrieve_reservations('confirmed', planets)
+    @declined = retrieve_reservations('declined', planets)
+  end
+
   def confirm_reservation
     reservation = Reservation.find(params[:id])
     reservation.status = 'confirmed'
@@ -34,13 +40,6 @@ class ReservationsController < ApplicationController
     reservation.status = 'declined'
     reservation.save
     redirect_to my_planets_reservations_path
-  end
-
-  def my_planets_reservations
-    planets = current_user.planets
-    @pending = retrieve_reservations('pending', planets)
-    @confirmed = retrieve_reservations('confirmed', planets)
-    @declined = retrieve_reservations('declined', planets)
   end
 
   private
