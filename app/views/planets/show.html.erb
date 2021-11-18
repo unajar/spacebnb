@@ -3,6 +3,7 @@
   <div class="row">
     <div class="col-md-6 mb-4 mb-md-0">
 
+<<<<<<< HEAD
       <div id="mdb-lightbox-ui"></div>
 
       <div class="mdb-lightbox">
@@ -49,3 +50,12 @@
     </div>
   </div>
 </section>
+=======
+<p>Description: <%= @planet.description %></p>
+<p>Address: <%= @planet.address %></p>
+<p>Price: <%= humanized_money_with_symbol(@planet.price) %></p>
+
+<%# <%= cl_image_tag @planet.photo.key, height: 300, width: 400, crop: :fill%>
+
+<p><%= link_to "Book this planet", new_planet_reservation_path(@planet) %></p>
+>>>>>>> master
