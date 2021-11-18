@@ -1,0 +1,17 @@
+.card-deck {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+  width: 250px;
+  height: 400px;
+}
+
+.card-title {
+  color: black;
+}
+
+.card-text {
+  color: grey;
+}

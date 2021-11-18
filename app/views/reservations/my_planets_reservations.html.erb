@@ -1,0 +1,40 @@
+<h1>My planet's reservations</h1>
+<h2>New:</h2>
+<ul>
+  <% @pending.each do |reservation| %>
+    <li>
+      <%= reservation.planet.name %>
+      <%= reservation.user.user_name %>
+      <%= reservation.start_date %>
+      <%= reservation.end_date %>
+      <%= link_to 'accept', confirm_reservation_path(reservation), method: :patch %>
+      <%= link_to 'decline', decline_reservation_path(reservation), method: :patch %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Confirmed:</h2>
+<ul>
+  <% @confirmed.each do |reservation| %>
+    <li>
+      <%= reservation.planet.name %>
+      <%= reservation.user.user_name %>
+      <%= reservation.start_date %>
+      <%= reservation.end_date %>
+      <%= link_to 'cancel', decline_reservation_path(reservation), method: :patch %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Declined:</h2>
+<ul>
+  <% @declined.each do |reservation| %>
+    <li>
+      <%= reservation.planet.name %>
+      <%= reservation.user.user_name %>
+      <%= reservation.start_date %>
+      <%= reservation.end_date %>
+      <%= link_to 'accept', confirm_reservation_path(reservation), method: :patch %>
+    </li>
+  <% end %>
+</ul>
