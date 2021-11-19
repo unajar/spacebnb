@@ -3,7 +3,6 @@ require "open-uri"
 
 Planet.destroy_all
 User.destroy_all
-
 User.create!(user_name:"Ben", password: "123456", email: "a@a.a")
 User.create!(user_name:"Umberto", password: "1234567", email: "u@u.u")
 User.create!(user_name:"Felix", password: "1234567", email: "f@f.f")
