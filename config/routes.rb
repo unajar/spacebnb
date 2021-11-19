@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   patch '/my_planets_reservations/:id/decline', to: 'reservations#decline_reservation', as: 'decline_reservation'
 
   resources :planets do
-    resources :reservations, except: %i[show destroy]
+    resources :reservations, except: %i[show destroy update edit index]
   end
 end
