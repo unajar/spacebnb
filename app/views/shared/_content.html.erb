@@ -3,11 +3,10 @@
     <% @planets.each do |planet| %>
       <%= link_to planet_path(planet) do %>
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1548&q=80" />
+          <%= cl_image_tag planet.photo.key, height: 350, width: 450, crop: :fill %>
           <div class="card-body">
             <h5 class="card-title"><%= planet.name %></h5>
               <p class="card-text"><%= planet.description %></p>
-              <%# <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
           </div>
         </div>
       <% end %>
