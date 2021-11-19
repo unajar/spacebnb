@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
     @reservation.planet = @planet
 
     if @reservation.save
-      redirect_to planet_path(@planet)
+      redirect_to my_reservations_path
     else
       render :new
     end
