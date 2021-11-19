@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon py-0">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://cdn.pixabay.com/photo/2014/04/03/11/58/rocket-312767_960_720.png" %>
+    <i class="fas fa-rocket nav-icon-colour"></i>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
           <%= link_to 'Reserve a Planet', planets_path, class: 'nav-link mx-3' %>
         </li>
         <li class="nav-item dropdown d-flex align-items-center">
-          <i class="fas fa-user avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
+          <i class="fas fa-user avatar dropdown-toggle nav-icon-colour" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to 'My Reservations', my_reservations_path, class: 'dropdown-item' %>
             <%= link_to "My Planets", my_planets_path, class: "dropdown-item" %>
