@@ -1,41 +1,84 @@
 
-<h1 class = "header_planet">My planets' reservations</h1>
-<h2>New:</h2>
-<ul>
-  <% @pending.each do |reservation| %>
-    <li>
-      <%= reservation.planet.name %>
-      <%= reservation.user.user_name %>
-      <%= reservation.start_date %>
-      <%= reservation.end_date %>
-      <%= link_to 'accept', confirm_reservation_path(reservation), method: :patch %>
-      <%= link_to 'decline', decline_reservation_path(reservation), method: :patch %>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1 class="text-center">My planets' reservations</h1>
+  <hr style="width:75%; height:4px">
+  <h2 class="text-center">New</h2>
+  <table class="table table-hover table-bordered">
+  <thead>
+      <tr>
+        <th scope="col">Planet Name</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pending.each do |reservation| %>
+      <tr>
+        <td><%= reservation.planet.name %></td>
+        <td><%= reservation.start_date %></td>
+        <td><%= reservation.end_date %></td>
+        <td><%= reservation.status %></td>
+        <td>
+          <%= link_to 'accept', confirm_reservation_path(reservation), class:'btn btn-success text-white', method: :patch %>
+          <%= link_to 'decline', decline_reservation_path(reservation), class:'btn btn-danger text-white', method: :patch %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<h2>Confirmed:</h2>
-<ul>
-  <% @confirmed.each do |reservation| %>
-    <li>
-      <%= reservation.planet.name %>
-      <%= reservation.user.user_name %>
-      <%= reservation.start_date %>
-      <%= reservation.end_date %>
-      <%= link_to 'cancel', decline_reservation_path(reservation), method: :patch %>
-    </li>
-  <% end %>
-</ul>
 
-<h2>Declined:</h2>
-<ul>
-  <% @declined.each do |reservation| %>
-    <li>
-      <%= reservation.planet.name %>
-      <%= reservation.user.user_name %>
-      <%= reservation.start_date %>
-      <%= reservation.end_date %>
-      <%= link_to 'accept', confirm_reservation_path(reservation), method: :patch %>
-    </li>
-  <% end %>
-</ul>
+  <h2 class="text-center">Confirmed</h2>
+  <table class="table table-hover table-bordered">
+  <thead>
+      <tr>
+        <th scope="col">Planet Name</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @confirmed.each do |reservation| %>
+      <tr>
+        <td><%= reservation.planet.name %></td>
+        <td><%= reservation.start_date %></td>
+        <td><%= reservation.end_date %></td>
+        <td><%= reservation.status %></td>
+        <td>
+          <%= link_to 'decline', decline_reservation_path(reservation), class:'btn btn-danger text-white', method: :patch %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h2 class="text-center">Declined</h2>
+  <table class="table table-hover table-bordered">
+  <thead>
+      <tr>
+        <th scope="col">Planet Name</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @declined.each do |reservation| %>
+      <tr>
+        <td><%= reservation.planet.name %></td>
+        <td><%= reservation.start_date %></td>
+        <td><%= reservation.end_date %></td>
+        <td><%= reservation.status %></td>
+        <td>
+          <%= link_to 'accept', confirm_reservation_path(reservation), class:'btn btn-success text-white', method: :patch %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
