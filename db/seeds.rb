@@ -49,5 +49,5 @@ planets[9].photo.attach(io: file9, filename: 'planet9.jpg', content_type: 'image
 # Planet.create!(address: "The moon", description: "Come to see the flag raised in 1969", name: "Moon", price: 100, user: User.first)
 
 
-Reservation.create!(user: User.second, planet: Planet.first, start_date: "2021-11-18", end_date: "2021-11-20", status: "pending")
-Reservation.create!(user: User.second, planet: Planet.second, start_date: "2021-11-18", end_date: "2021-11-20", status: "pending")
+Reservation.create!(user: User.second, planet: Planet.first, start_date: "2021-11-28", end_date: "2021-11-30", status: "pending")
+Reservation.create!(user: User.second, planet: Planet.second, start_date: "2021-11-28", end_date: "2021-11-30", status: "pending")
