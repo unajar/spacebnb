@@ -23,7 +23,7 @@
     <div class="col-md-6">
 
       <h5><%= @planet.name %></h5>
-      <p class="mb-2 text-muted text-uppercase small">PLANET</p>
+      <p class="mb-2 text-muted text-uppercase small"><%= @planet.user.email %></p>
       <p><span class="mr-1"><strong><%= humanized_money_with_symbol(@planet.price) %></strong></span></p>
       <p class="pt-1"><strong>DESCRIPTION:</strong></p>
       <p><%= @planet.description %></p>
