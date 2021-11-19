@@ -4,7 +4,7 @@ require "open-uri"
 Planet.destroy_all
 User.destroy_all
 User.create!(user_name:"Ben", password: "123456", email: "a@a.a")
-User.create!(user_name:"Umberto", password: "1234567", email: "u@u.u")
+umberto = User.create!(user_name:"Umberto", password: "1234567", email: "u@u.u")
 User.create!(user_name:"Felix", password: "1234567", email: "f@f.f")
 
 file0 = URI.open('https://res.cloudinary.com/dmnmqtpct/image/upload/v1637269586/photo-1614728423169-3f65fd722b7e_g8xqvk.jpg')
@@ -24,7 +24,7 @@ file9 = URI.open('https://res.cloudinary.com/dmnmqtpct/image/upload/v1637269257/
     address: "#{Faker::Space.galaxy}#{Faker::Number.number(digits: 2)}",
     description: Faker::Science.element,
     price:  rand(240000..999999),
-    user: User.all.sample
+    user: umberto
   )
 end
 
