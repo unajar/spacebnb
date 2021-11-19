@@ -38,3 +38,31 @@
     </li>
   <% end %>
 </ul>
+
+<%# new stuff %>
+
+<div class="container">
+<h1 class="text-center">My planets' reservations</h1>
+<h2>New reservations</h2>
+<table class="table table-hover table-bordered">
+<thead>
+    <tr>
+      <th scope="col">Planet Name</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pending.each do |reservation| %>
+    <tr>
+      <td><%= reservation.planet.name %></td>
+      <td><%= reservation.start_date %></td>
+      <td><%= reservation.end_date %></td>
+      <td><%= reservation.status %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
