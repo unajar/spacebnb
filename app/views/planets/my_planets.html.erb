@@ -2,8 +2,4 @@
 
 <%= link_to "Add a planet", new_planet_path %>
 
-<ul>
-  <% @planets.each do |planet| %>
-    <li><%= link_to planet.name, my_planet_path(planet) %></li>
-  <% end %>
-</ul>
+<%= render "shared/cards" %>
