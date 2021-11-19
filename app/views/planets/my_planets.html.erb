@@ -4,7 +4,7 @@
 <div class="container">
   <div class="text-align">
     <h1 class = "header_planet"><%= image_tag "https://cdn.pixabay.com/photo/2014/04/03/11/58/rocket-312767_960_720.png" %> My planets</h1>
-    <p class = "mx-3"><%= link_to "Add a planet", new_planet_path, class: "btn btn-secondary" %></p>
+    <p class = "mx-3 text-center"><%= link_to "Add a planet", new_planet_path, class: "btn btn-secondary" %></p>
   </div>
   <% @planets.each do |planet| %>
     <%= link_to my_planet_path(planet) do %>
