@@ -28,12 +28,14 @@ img {
   object-fit: cover;
   margin: 20px 200px 20px 200px;
   border-radius: 10px;
-  height: 150px;
+  height: 250px;
 }
 
 .card-product img {
+  padding: 20px;
+  border-radius: 30px;
   height: 100%;
-  width: 120px;
+  width: 300px;
 }
 
 .card-product h2 {
@@ -45,7 +47,7 @@ img {
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -66,5 +68,6 @@ img {
 }
 
 .price {
-  margin-top: 40px;
+  margin-top: 240px;
+  padding-top: 65px;
 }
