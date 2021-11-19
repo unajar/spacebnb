@@ -1,0 +1,13 @@
+<h1>My reservations</h1>
+<ul>
+  <% @reservations.each do |reservation| %>
+    <li>
+      <%= reservation.planet.name %>
+      <%= reservation.start_date %>
+      <%= reservation.end_date %>
+      <%= reservation.status %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Book reservation', planets_path, class: 'btn btn-primary' %>

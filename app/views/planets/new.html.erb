@@ -1,12 +1,16 @@
-<h1>List a new planet</h1>
 
-<%= simple_form_for @planet do |f| %>
-<%= f.input :name, placeholder: "Planet name" %>
-<%= f.input :address, placeholder: "Planet address" %>
-<%= f.input :description, placeholder: "Planet description" %>
-<%= f.input :photo, as: :file %>
-<%= f.input :price, placeholder: "Price" %>
-<%= f.submit%>
-<% end  %>
+<div class="container">
 
-<p><%= link_to "Back", my_planets_path %></p>
+  <h1 class = "header_planet">Create a new planet</h1>
+
+  <%= simple_form_for @planet do |f| %>
+  <%= f.input :name, placeholder: "Planet name" %>
+  <%= f.input :address, placeholder: "Planet address" %>
+  <%= f.input :description, placeholder: "Planet description" %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :price, placeholder: "Price" %>
+  <%= f.submit class: "btn btn-primary"%>
+  <% end  %>
+
+  <p class="my-3"><%= link_to "Back", my_planets_path, class: "btn btn-secondary"%></p>
+</div>
