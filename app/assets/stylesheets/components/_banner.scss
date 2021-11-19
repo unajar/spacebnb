@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   height: 600px;
-  padding: 150px 0;
+  padding: 150px;
   display: flex;
   margin-bottom: 20px;
   // mix-blend-mode: hard-light;
@@ -40,4 +40,12 @@
 
 .btn-ghost:hover {
   background-color: white;
+}
+
+.navbar-brand img {
+  padding-top: 8px;
+}
+
+.notice {
+  margin: 0;
 }

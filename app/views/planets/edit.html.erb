@@ -1,10 +1,12 @@
-<h1>Edit planet</h1>
+<div class="container">
+  <h1 class = "header_planet">Edit planet</h1>
 
-<%= simple_form_for @planet do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :price %>
-  <%= f.submit class: 'btn btn-primary' %>
-  <% end %>
+  <%= simple_form_for @planet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :price %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+</div>
