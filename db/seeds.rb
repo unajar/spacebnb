@@ -1,5 +1,8 @@
+puts 'Initializing seed'
+
 require "faker"
 require "open-uri"
+
 
 Planet.destroy_all
 User.destroy_all
@@ -34,6 +37,7 @@ file[9] = URI.open('https://res.cloudinary.com/dmnmqtpct/image/upload/v163726925
 
 i = 0
 10.times do
+  puts "creating planet #{i}"
   planet = Planet.new(
     name:    "#{Faker::Space.planet}#{Faker::Number.number(digits: 2)}",
     address: "#{Faker::Space.galaxy}#{Faker::Number.number(digits: 2)}",
@@ -45,9 +49,6 @@ i = 0
   planet.save!
   i += 1
 end
-
-
-
 
 # planet = Article.new(title: 'NES', body: "A great console")
 
