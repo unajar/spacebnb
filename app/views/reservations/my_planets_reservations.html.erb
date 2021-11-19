@@ -1,4 +1,24 @@
-<h1 class = "header_planet">My planet's reservations</h1>
+<div class="container">
+<h1 class="text-center">My planet's reservations</h1>
+<table class="table table-hover table-bordered">
+<thead>
+    <tr>
+      <th scope="col">Planet Name</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
 <h2>New:</h2>
 <ul>
   <% @pending.each do |reservation| %>
