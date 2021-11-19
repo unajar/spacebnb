@@ -20,7 +20,7 @@ file8 = URI.open('https://res.cloudinary.com/dmnmqtpct/image/upload/v1637269273/
 file9 = URI.open('https://res.cloudinary.com/dmnmqtpct/image/upload/v1637269257/photo-1614732414444-096e5f1122d5_tmy06d_patrio.jpg')
 
 10.times do
-  planet = Planet.create!(
+  Planet.create!(
     name:    "#{Faker::Space.planet}#{Faker::Number.number(digits: 2)}",
     address: "#{Faker::Space.galaxy}#{Faker::Number.number(digits: 2)}",
     description: Faker::Science.element,
